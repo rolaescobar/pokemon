@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt") // Agregar esta línea
 }
 
 android {
@@ -51,6 +52,10 @@ dependencies {
 
     implementation(libs.retrofit2)
     implementation(libs.gsonConverter)
+
+    // Glide dependencies for Kotlin
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    kapt("com.github.bumptech.glide:compiler:4.12.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
